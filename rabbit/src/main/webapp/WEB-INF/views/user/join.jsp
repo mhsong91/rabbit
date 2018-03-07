@@ -55,7 +55,7 @@ function callback(res){
 	
 }
 function check(){
-	var params = "uiName,";
+	var params = "uiId";
 	var au = new AjaxUtil("${root}/user/check",params,"POST");
 	au.send(callback2);  
 	
@@ -84,7 +84,9 @@ function callback2(res){
     <td><input type="text" id="uiId" name="uiId" ></td>
     <td><input type="password" id="uiPwd" name="uiPwd" ></td>
     <td><input type="text" id="uiHP" name="uiHP" ></td>
-    <td><input type="text" id="admin" name="admin" ></td>
+    <td><input type="radio" id="admin" name="admin" value="0" ><a>일반사용자</a>
+    	<input type="radio" id="admin" name="admin" value="1"><a>사장님^^</a>
+    </td>
     
     <td><input type="button" value="새식구되기" onclick="join()"></td>
     <td><input type="button" value="중복체크" onclick="check()"></td>

@@ -57,7 +57,7 @@ public class UserInfoController {
 	}
 	
 	@RequestMapping(value="/check", method=RequestMethod.POST)
-	public @ResponseBody Map<String, Object> join2(@RequestBody Map rmap){
+	public @ResponseBody Map<String, Object>  join2(@RequestBody Map rmap){
 		System.out.println("!!!!!!!!!!!!!!!!!!!!!!"+rmap);
 		UserInfoVO ui=new UserInfoVO();
 		ui.setUiId((String) rmap.get("uiId"));
@@ -65,7 +65,8 @@ public class UserInfoController {
 	
 		map.put("msg", "아이디 중복 임마~");
 		map.put("biz", false);
-		if(uis.checkUserId(ui.getUiId())==0) {
+		String uiId=ui.getUiId();
+		if(uis.checkUserId(uiId)==0) {
 			map.put("msg", "사용가능한 아이디입니다");
 			map.put("biz", true);
 		}
