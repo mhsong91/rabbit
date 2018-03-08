@@ -79,14 +79,14 @@ function callback2(res){
 </thead>
 <tbody>
 
-  <tr>
+  <tr name="test">
   	<td><input type="text" id="uiName" name="uiName"></td>
     <td><input type="text" id="uiId" name="uiId" ></td>
     <td><input type="password" id="uiPwd" name="uiPwd" ></td>
     <td><input type="text" id="uiHP" name="uiHP" ></td>
     <td>
-    	<input type="radio" id="admin" name="admin" value="0">일반사용자
-    	<input type="radio" id="admin" name="admin" value="1" >사장님
+    	<input type="radio" id="admin1" name="admin" value="0">일반사용자
+    	<input type="radio" id="admin2" name="admin" value="1" >사장님
     </td>
     
     <td><input type="button" value="회원가입" onclick="join()"></td>

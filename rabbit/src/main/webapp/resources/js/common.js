@@ -16,18 +16,31 @@ var AjaxUtil = function (url, params, type, dataType){
 
 		var data = {};
 		for(var i=0,max=paramArr.length;i<max;i++){
-			var objType =  paramArr[i].split("_")[0];
-			var objName = paramArr[i].split("_")[1];
-			if(paramArr[i].split("_").length==1){
-				objType = "it";
-				objName = paramArr[i];
+			//input, select, textarea
+			var objName = paramArr[i];
+			var obj = $("[name=" + objName + "]");
+			if(obj.length==0){
+				alert(objName + "라는 name을 가진 객체가 없습니다.");
+				throw "Error : name[" + objName + "] is not found in html!!";
 			}
-			if(objType=="it"){
-				data[objName] = $("input[name=" + objName +"]").val();
-			}else if(objType=="s"){
-				data[objName] = $("select[name=" + objName +"]").val();
+			var objTag = obj.prop("tagName");
+			var selector = "";
+			if(objTag=="INPUT"){
+				selector = "input[name=" + objName +"]";
+				if(obj.attr("type")=="radio"){
+					selector += ":checked";
+				}
+			}else if(objTag=="SELECT"){
+				selector = "select[name=" + objName +"]";
+			}else if(objTag=="TEXTAREA"){
+				selector = "textarea[name=" + objName +"]";
+			}else{
+				alert(objName + "의 엘리먼트가 form태그가 아닙니다.");
+				throw "Error : The element tag is not instead in formtags!!";
 			}
+			data[objName] = $(selector).val();
 		}
+		console.log(data);
 		this.param = JSON.stringify(data);
 		if(this.type.toUpperCase()=="GET"){
 			this.param = encodeURIComponent(this.param);
