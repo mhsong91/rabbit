@@ -18,6 +18,8 @@ public class UserInfoServiceImpl implements UserInfoService{
 	
 	@Override
 	public boolean login(Map<String, Object> rMap, UserInfoVO ui) {
+		
+		
 		ui = uidao.selectUserInfo(ui);
 		rMap.put("msg", "아이디 비밀번호를 확인해주세요.");
 		rMap.put("biz", false);

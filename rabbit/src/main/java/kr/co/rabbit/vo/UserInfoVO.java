@@ -50,4 +50,6 @@ public class UserInfoVO {
 				+ uiHP + ", admin=" + admin + "]";
 	}
 	
+
+	
 }

@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>1번문제 다음 빈칸안에 들어갈단어는?=>오늘은 재형이가()</h1><br>
-<h2>쏜다</h2><br>
-<h2>싼다</h2><br>
-<h2>쌋다</h2><a href="${pPath}/user/login"><button type="button">브끄^^</button></a><br>
-<h2>지렸다</h2><br>
-<h2>회원가입하러가기</h2><br>
+<h1>우리가 어떤민족입니까?(맞추면로그인페이지로)</h1><br>
+<h2>배다른민족</h2><br>
+<h2>빠른민족</h2><br>
+<h2>배달의민족</h2><a href="${pPath}/user/login"><button type="button"><h2>정답</h2></button></a><br>
+<h2>느린민족</h2><br>
 </body>
 </html>

@@ -28,7 +28,7 @@ function callback(res){
 
 </script>
 <body >
-<h1>브끄^^</h1>
+<h1>로그인page</h1>
 <table border="1">
 <thead>
 <tr>
@@ -41,7 +41,7 @@ function callback(res){
     <td><input type="text" name="uiId"></td>
     <td><input type="text" name="uiPwd"></td>
     <td><input type="button" onclick="login()" value="로그인"></td>
-    <td><a href="${pPath}/user/join"><button type="button">새식구^^</button></a></td>
+    <td><a href="${pPath}/user/join"><button type="button">회원가입</button></a></td>
   </tr>
  </tbody>
 </table>
