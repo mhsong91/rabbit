@@ -11,3 +11,7 @@
 
 <script src="${rPath}/js/jquery-3.2.1.js${ver}" charset="utf-8"></script>
 <script src="${rPath}/js/common.js${ver}"></script>
+<script src="${rPath}/js/bootstrap.min.js${ver}"></script>
+
+
+<link rel="stylesheet" type="text/css" href="${rPath}/css/bootstrap.min.css${ver}"/>

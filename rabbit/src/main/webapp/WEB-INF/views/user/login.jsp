@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
 <script>
 
 
@@ -24,10 +25,16 @@ function callback(res){
 		location.href="${root}/path/map/main";
 	}
 	
+	if(res.aiz){
+		location.href="${root}/path/user/admin";
+	}
+	
+	
 }
 
 </script>
-<body >
+    <body>
+
 <h1>로그인page</h1>
 <table border="1">
 <thead>
@@ -40,6 +47,7 @@ function callback(res){
   <tr>
     <td><input type="text" name="uiId"></td>
     <td><input type="text" name="uiPwd"></td>
+      
     <td><input type="button" onclick="login()" value="로그인"></td>
     <td><a href="${pPath}/user/join"><button type="button">회원가입</button></a></td>
   </tr>

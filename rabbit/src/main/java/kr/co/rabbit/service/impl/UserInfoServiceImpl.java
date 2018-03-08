@@ -21,13 +21,23 @@ public class UserInfoServiceImpl implements UserInfoService{
 		
 		
 		ui = uidao.selectUserInfo(ui);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~"+ui);
 		rMap.put("msg", "아이디 비밀번호를 확인해주세요.");
 		rMap.put("biz", false);
 		if(ui!=null) {
+			if(ui.getAdmin()==1) {
+				rMap.put("user", ui.getUiId());
+				rMap.put("msg", ui.getUiName() + "사장님 로그인에 성공하셨습니다.");
+				rMap.put("aiz", true);
+				return true;
+			}else if(ui.getAdmin()==0) {
 			rMap.put("user", ui.getUiId());
 			rMap.put("msg", ui.getUiName() + "님 로그인에 성공하셨습니다.");
 			rMap.put("biz", true);
 			return true;
+			}else {
+				rMap.put("msg", "사장님인지 아닌지 체크 해주세요^^");
+			}
 		}
 		return false;
 	}
